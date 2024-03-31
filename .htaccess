@@ -1,0 +1,20 @@
+# Turn on URL rewriting
+RewriteEngine On
+
+# Redirect from roderickgpt.com to www.roderickgpt.com with HTTPS
+RewriteCond %{HTTP_HOST} ^roderickgpt\.com$ [NC]
+RewriteRule ^ https://www.roderickgpt.com%{REQUEST_URI} [R=301,L]
+
+# If a requested file or directory does not exist, route the request to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
+
+# Set the default index file for directories
+DirectoryIndex index.php
+
+# Disable directory listings and enable CGI script execution
+Options -Indexes +ExecCGI
+
+# Handle .cgi and .pl files as CGI scripts
+AddHandler cgi-script .cgi .pl

@@ -1,0 +1,908 @@
+/* Common Styles */
+body, html {
+    margin: 0;
+    background-color: #ffcd00;
+    color: black;
+    font-family: 'TBWAGrotesk';
+  }
+  
+  @font-face {
+    font-family: 'TBWAGrotesk';
+    font-style: normal;
+    font-weight: 400;
+    /* Regular */
+    src: local('TBWAGrotesk-Regular'),
+      url('/fonts/TBWAGrotesk-Regular.woff2') format('woff2'),
+      url('/fonts/TBWAGrotesk-Regular.woff') format('woff');
+  }
+  
+  @font-face {
+    font-family: 'TBWAGrotesk';
+    font-style: normal;
+    font-weight: 900;
+    /* Black */
+    src: local('TBWAGrotesk-Black'),
+      url('/fonts/TBWAGrotesk-Black.woff2') format('woff2'),
+      url('/fonts/TBWAGrotesk-Black.woff') format('woff');
+  }
+  
+  a {
+    color: rgb(0, 0, 0);
+    /* Change this to your desired color */
+    /* Optional: Removes underline from links */
+  }
+  
+  /* Optional: Change color on hover */
+  a:hover {
+    color: #757575;
+    /* Change this to your desired hover color */
+  }
+  
+  
+  .shake {
+    animation: shake 0.5s;
+  }
+  
+  @keyframes shake {
+  
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+  
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: translateX(-10px);
+    }
+  
+    20%,
+    40%,
+    60%,
+    80% {
+      transform: translateX(10px);
+    }
+  }
+  
+  
+  /* Add this to your CSS file */
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes popIn {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  
+    60% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  #particle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* To keep it in the background */
+  }
+  
+  .containerindex {
+    position: relative;
+    z-index: 1;
+    /* Above the background */
+  }
+  /* Add this to your CSS file */
+  
+  .talkCloud, .triangle {
+      display: none;
+  }
+  
+  
+  .titleRo,
+  #nietNodig {
+  
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  .talkCloud {
+    transform: scale(0);
+    animation: popIn 0.5s ease forwards;
+    animation-delay: 1s;
+    /* Delay to start after the fadeIn */
+  }
+  
+  .centerTriangle {
+  
+    opacity: 0;
+    transform: translateY(100px);
+    /* Adjust the starting position as needed */
+    animation: slideUp 0.5s ease forwards;
+    animation-delay: 1.5s;
+    /* Delay to start after the talkCloud animation finishes */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes popIn {
+    0% {
+      transform: scale(0);
+    }
+  
+    60% {
+      transform: scale(1.1);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(100px);
+  
+      opacity: 0;
+    }
+  
+    to {
+      transform: translateY(0);
+  
+      opacity: 1;
+    }
+  }
+  
+  .input-error {
+    border-color: red;
+  }
+  
+  .containerindex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .containermain {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 100px);
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  @keyframes rotateHeader {
+    0%, 100% {
+      transform: rotate(-2deg);
+    }
+  
+    50% {
+      transform: rotate(2deg);
+    }
+  }
+  
+  .header {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding-bottom: 4px;
+    background-position: bottom center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('images/arms3.png');
+    animation: rotateHeader 2s linear infinite;
+    /* Apply the rotation animation */
+  }
+  .logoRoderick {
+    height: 50vh;
+    width: 100%;
+  }
+  .loginPage {
+    height: 80vw;
+    max-height: 1200px;
+    padding: 60px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    background-image: url(images/logoro.png);
+  }
+  
+  .centerTriangle {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .triangle {
+      margin-bottom: -5px;
+      width: 40px;
+      position: relative;
+  }
+  
+  .talkCloud {
+    background-color: white;
+    padding-bottom: 20px;
+    border: 10px;
+    border: rgb(255, 255, 255) 10px;
+    border-style: solid;
+    border-radius: 4px;
+    box-shadow: 10px 10px 0px #0000001a;
+  }
+  .titleindex {
+    font-size: 3rem;
+    text-align: center;
+  }
+  
+  .header h1 {
+    font-size: 3rem;
+  }
+  
+  .titleRo {
+    margin: 0px;
+    padding: 0px;
+    font-size: 3rem;
+    text-align: center;
+  }
+  .header h2 {
+    font-weight: 400;
+    font-size: 2rem;
+    font-weight: 200;
+  }
+  
+  
+  @keyframes bobbing {
+  
+    0%,
+    100% {
+      transform: translateY(0) rotate(0);
+    }
+  
+    25% {
+      transform: translateY(-5px) rotate(-3deg);
+    }
+  
+    50% {
+      transform: translateY(5px) rotate(3deg);
+    }
+  
+    75% {
+      transform: translateY(-5px) rotate(-3deg);
+    }
+  }
+  
+  .talking-head-animation {
+    animation: bobbing 2s ease-in-out infinite;
+  }
+  
+  .main-content {
+    display: flex;
+    flex: 1;
+    margin-bottom: 40px;
+    gap: 20px;
+  }
+  
+  .chat-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex: 1;
+    margin-right: 20px;
+    overflow-y: auto;
+    height: 100%;
+  }
+  
+  .media-button-section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .media-placeholder {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .button-section {
+    flex-grow: 0;
+    display: grid;
+    /*grid-template-columns: 1fr 1fr;*/
+    grid-template-rows: 1fr;
+    gap: 10px;
+  }
+  
+  .button-section button:hover {
+    background: black;
+    color: white;
+  }
+  
+  .login-button svg {
+    width: 24px;
+    /* Adjust as needed */
+    height: 24px;
+    /* Adjust as needed */
+  }
+  
+  .login-button svg .cls-1 {
+    fill: black;
+    /* Default color */
+  }
+  
+  .login-button:hover svg .cls-1 {
+    fill: #ffcd00;
+    /* Color on hover */
+  }
+  
+  .login-form {
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+  }
+  
+  .flag-selection {
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  
+  .flag-icon {
+  
+    border: 1px solid black;
+    width: 140px;
+    /* Adjust the size as needed */
+    height: 80px;
+    /* Keeps the aspect ratio of the image */
+    margin-left: 10px;
+    /* Space between the flag images */
+    border-radius: 4px;
+    cursor: pointer;
+    /* Invisible border for unselected flags */
+    box-shadow: 0px 0px 0px transparent;
+    /* Invisible shadow for unselected flags */
+    transition: box-shadow 0.3s, border 0.3s;
+    /* Smooth transition for shadow and border */
+  }
+  
+  .flag-icon.selected {
+    box-shadow: 6px 6px 0px #00000061;
+  }
+  
+  .media-placeholder img,
+  .media-placeholder video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom;
+  }
+  
+  #waveAnimationContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    z-index: 1;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  #waveCanvas {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .response-area {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: auto;
+    max-height: 550px;
+    font-size: 0.9rem;
+    font-weight: 200;
+    line-height: 1.2rem;
+    flex: 1;
+  }
+  
+  .response-area div {
+    margin-bottom: 10px;
+  }
+  
+  .query-input {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    background: #ffcd00;
+  }
+  
+  .query-input button:not(:disabled):hover {
+    background: black;
+    color: white;
+  }
+  
+  .query-input button:disabled {
+    background: #555;
+    color: #aaa;
+    cursor: not-allowed;
+    border-color: #444;
+  }
+  
+  .query-input input[type="text"] {
+    padding: 10px;
+    font-size: 0.9rem;
+    font-family: 'TBWAGrotesk';
+    width: calc(100% - 22px);
+    margin-right: 10px;
+    color: black;
+    border: 1px solid black;
+    background: none;
+  }
+  
+  .query-input button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: 'TBWAGrotesk';
+    cursor: pointer;
+    border: 1px solid black;
+  }
+  
+  .content button {
+    white-space: nowrap;
+  }
+  
+  .disclaimer {
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+    font-size: 0.8rem;
+  }
+  
+  #login-form-btn {
+    vertical-align: bottom;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  
+  .containermain button,
+  .login-button {
+    background: #ffcd00;
+    border: 1px solid black;
+    color: black;
+    padding: 6px 14px;
+    cursor: pointer;
+    font-family: 'TBWAGrotesk';
+    font-size: 0.9rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .login-button:hover {
+    background: black;
+    color: white;
+  }
+  
+  .login-input {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'TBWAGrotesk';
+    border: 1px solid black;
+    color: black;
+    background: transparent;
+  }
+  
+  /* Main Page Styles */
+  .desktop-buttons {
+    display: block;
+  }
+  
+  .mobile-buttons {
+    display: none;
+  }
+  
+  /* Request Access Page Styles */
+  .signup-form {
+    margin-top: 400px;
+    top: 100px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .form-row {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  
+  .form-input,
+  .submit-button {
+    padding: 10px;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    font-family: 'TBWAGrotesk';
+    background: transparent;
+    border: 1px solid black;
+    color: black;
+    border-radius: 5px;
+  }
+  
+  .submit-button {
+    cursor: pointer;
+    background: black;
+    color: black;
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .submit-button:hover {
+    background: black;
+    color: white;
+  }
+  
+  .checkbox-row input[type="checkbox"] {
+    width: auto;
+  }
+  
+  .checkbox-container {
+    align-items: center;
+  }
+  
+  .checkbox-container input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .form-warning {
+    color: red;
+    font-size: 0.8rem;
+    display: none;
+    margin-top: 5px;
+  }
+  
+  .form-row label {
+    margin-bottom: 10px;
+  }
+  
+  .error {
+    border-color: red;
+  }
+  
+  .terms-list {
+    font-size: 0.5rem;
+    letter-spacing: 0.1rem;
+    line-height: 0.9rem;
+    margin-bottom: 40px;
+  }
+  
+  #explanation {
+    resize: vertical;
+  }
+  
+  .char-counter {
+    color: black;
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 2px 5px;
+    border-radius: 5px;
+    pointer-events: none;
+  }
+  
+  .response-content {
+    display: inline-block;
+  }
+  
+  #talkingHead {
+    position: absolute;
+    top: 0;
+    /* Adjust as needed */
+    right: 0;
+    /* Adjust as needed */
+    width: 150px;
+    /* Set desired width */
+    height: auto;
+    /* Maintain aspect ratio */
+    z-index: 10;
+    /* Ensure it's above other content */
+    /* ... other styles ... */
+  }
+  
+  .header {
+    height: 200px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding-bottom: 8px;
+  }
+  
+  
+  
+  .header img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    /* Set desired width */
+    height: auto;
+    /* Maintain aspect ratio */
+    z-index: 10;
+    /* Ensure it's above other content */
+    /* ... other styles ... */
+  }
+  
+  .report-icon {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    vertical-align: top;
+    margin-left: 2px;
+    fill: black;
+    color: black;
+  }
+  
+  .ai-response.reported {
+    opacity: 0.5;
+  }
+  
+  .social-icons {
+    text-align: center;
+  }
+  
+  .social-icons a {
+    color: black;
+    /* Makes the icons grey */
+    font-size: 32px;
+    /* Increases the size of the icons */
+    margin: 0 10px;
+    /* Adds space between the icons */
+  }
+  
+  .social-icons a:hover {
+    color: white;
+    /* Changes color on hover for a nice effect */
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .disclaimer {
+    margin: 0;
+    /* Remove default margin */
+  }
+  
+  /* Media Queries for Smaller Screens */
+  @media screen and (max-width: 768px) {
+    .desktop-buttons {
+      display: none;
+    }
+  
+     .loginPage {
+      height: 80vh;
+      padding: 20px 20px;
+  
+      background-position: center bottom;
+    }
+    .containermain {
+        padding: 16px;
+        z-index: 5;
+     }
+  
+  
+    p {
+      font-size: 1rem;
+      text-align: center;
+    }
+  
+    #talkingHead {
+      right: -20px;
+    }
+  
+  
+  
+    .flagging {
+      display: flex;
+        width: 50%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+  
+    .mobile-buttons {
+      display: block;
+    }
+  
+    /* Main Page Styles for Smaller Screens */
+    .main-content {
+      flex-direction: column;
+    }
+  
+    .main-content {
+      margin-bottom: 4px;
+    }
+  
+    .response-area {
+      margin-bottom: 10px;
+      overflow-y: auto;
+      font-size: 1rem;
+      line-height: 1rem;
+      max-height: 50vh;
+    }
+  
+    .form-input,
+    .submit-button {
+      padding: 5px;
+      margin-top: 4px;
+      font-size: 1rem;
+    }
+  
+  
+    .access-request {
+      text-align: center;
+      font-size: 1rem;
+      padding-left: 10px;
+    }
+  
+  
+    .titleindex {
+      font-size: 2rem;
+    }
+  
+    .header h1 {
+      font-size: 2rem;
+    }
+  
+    .header h2 {
+      font-weight: 400;
+      font-size: 1.2rem;
+      font-weight: 200;
+    }
+    
+    .chat-section {
+      order: 2;
+    }
+  .media-button-section {
+    position: relative;
+      order: 1;
+      z-index: 20;
+    }
+  
+    .chat-section,
+    .media-button-section {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 4px;
+    }
+  
+    .media-button-section button, .button-section button {
+      padding: 2px 6px;
+      font-size: 1rem ;
+    }
+  
+  
+    .login-button-one {
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+  
+    .containermain button {
+      padding: 2px 6px;
+      padding-bottom: 40px;
+      font-size: 1rem;
+  
+    }
+  
+  
+    .containermain button {
+      padding: 3px 6px;
+      font-size: 1rem;
+      border-radius: 5px;
+    }
+  
+    .query-input input[type="text"] {
+      padding: 5px;
+      font-size: 1rem;
+    }
+  
+    .query-input button {
+      padding: 5px 10px;
+      font-size: 1rem;
+    }
+  
+    .button-section {
+      font-size: 1rem !important;
+      gap: 5px;
+    }
+    .social-icons a {
+      font-size: 20px;
+      margin: 0 4px;
+    }
+    .footer-content {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .disclaimer {
+      font-size: 0.8rem;
+      flex: 1;
+      padding: 4px;
+      text-align: left;
+      /* Allows the disclaimer to take up available space */
+    }
+  
+    .social-icons {
+      margin-top: 0;
+      text-align: right;
+    }
+  
+    .containerindex {
+      padding: 20px;
+      height: auto;
+    }
+  
+    .signup-form {
+      margin-top: 20px;
+      /* Adjust as needed for spacing */
+      max-width: 100%;
+      /* Take full width of the screen */
+    }
+  
+    .form-row {
+      margin-bottom: 20px;
+      /* Adjust as needed for spacing */
+    }
+    
+  }
+  

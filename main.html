@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to RoderickGPT</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="particle-container">
+    <div class="containermain"> 
+
+        <div class="main-content">
+            <div class="chat-section">
+                <div id="responseArea" class="response-area">
+                </div>
+
+                <div class="button-section">
+                    <button onclick="populateQuery('Can you share an innovative way marketers have made an impression on you?', this)">Can you share an innovative way marketers have made an impression on you?</button>
+                </div>
+                <div class="query-input">
+                    <input type="text" id="userQuery" placeholder="Type your question here..." />
+                    <button onclick="submitQuery()">Submit</button>
+                </div>
+            </div>
+            <div class="media-button-section" style="background-image: url('images/arms3.png');">
+                <!-- Talking Head Image -->
+                <img class="header" src="images/neutral.gif" alt="RoderickGPT" id="talkingHead">
+                
+                <!-- Media Placeholder -->
+                <div class="media-placeholder">
+                    <!-- Dynamic content will be loaded here -->
+                </div>
+            </div>
+        </div>
+        <div class="footer-content">
+            <p class="disclaimer">RoderickGPT can hallucinate. Just like the real Roderick on the ski-trip.</p>
+            <!-- Social Icons -->
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/roderick-prince-847a053b" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/prinsroderick/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="/app.js?v=1.1"></script>
+</script>
+</html>

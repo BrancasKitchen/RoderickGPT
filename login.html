@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<link rel="stylesheet" href="/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+<div id="particle-container">
+<div class="containerindex">
+
+    <div class="loginPage" id="logoRoderick">
+        <div>
+            <h1 class="titleRo"><span id="countdown"></span></h1>
+            <p id="nietNodig">Like Roderick, but with an 'Off' Button</p>
+        </div>
+        <div class="centerTriangle">   
+            <img src="images/triangle.png" class="triangle">
+            <div class="talkCloud">
+            <form class="login-form" action="/login" method="post">
+            <p id="favoriteColleague">Where did I beleef my best years?</p>
+                <div id="login-form-btn">
+
+                <input type="password" id="passcodeInput" name="passcode" class="login-input" placeholder="..." required>
+                <button type="submit" class="login-button login-button-login">
+                    <!-- Paste your SVG content here -->
+                    <svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 294.14 294.1">
+                    <defs>
+                        <style>
+                            .cls-1 {
+                                stroke-width: 0px;
+                            }
+                        </style>
+                    </defs>
+                    <g id="Layer_1-2">
+                        <path class="cls-1"
+                            d="m0,264.8c0-40.41,0-80.82,0-121.23.16-.34.44-.67.48-1.03,1.64-14.52,14.86-28.4,34.72-28.22,41.37.36,82.74.11,124.12.11,1.3,0,2.59,0,4.15,0,0-1.62,0-2.75,0-3.88,0-14.17-.23-28.35.1-42.51.15-6.36.77-12.85,2.27-19.02C174.17,14.76,209.95-6.64,244.12,1.87c26.94,6.71,46.29,28.68,49.5,56.24.29,2.47.48,4.96.49,7.44.04,21.45.07,42.9,0,64.35-.04,12.05-10.76,19.81-21.79,15.94-6.56-2.3-10.66-8.39-10.67-16.11-.03-21.35.04-42.71-.03-64.06-.05-15.27-9.77-28.06-24.09-31.96-21.31-5.81-41.31,9.89-41.54,32.78-.15,15.03,0,30.07-.06,45.1,0,1.95.35,2.78,2.61,2.99,17.11,1.62,30.02,15.02,30.08,31.69.16,38.68.15,77.37,0,116.05-.06,14.4-10.35,26.99-24.29,30.57-1.46.37-2.89.81-4.34,1.22H29.31c-.62-.21-1.23-.49-1.87-.61-13.46-2.37-23.7-12.15-26.61-25.42-.24-1.1-.55-2.19-.83-3.28Zm98.07-36.6s.03,0,.04,0c0,5.93-.17,11.87.04,17.8.36,10.3,10.44,17.61,20.38,14.95,7.79-2.09,12.38-8.43,12.45-17.49.08-10.62.1-21.25-.04-31.87-.03-2.57.78-4.07,2.88-5.59,11.32-8.15,16-22.52,11.94-35.96-3.93-13.03-16.06-22.51-29.51-23.07-15.06-.63-28.24,8.31-32.93,22.33-4.68,14.01.5,29.03,12.87,37.71.95.67,1.76,2.22,1.8,3.39.18,5.93.08,11.87.08,17.8Z" />
+                    </g>
+                    </svg>
+                </button>
+
+                </div>
+                <div class="flag-selection">
+                <p id="speakDunklisch"> Yes, I will speak Dunglisch with you</p>
+                    <div class="flagging">
+                    <img src="images/vlag1.png" alt="Flag 1" class="flag-icon selected" id="vlag1">
+                    <img src="images/vlag2.png" alt="Flag 2" class="flag-icon" id="vlag2">
+                    <input type="hidden" id="selectedFlag" name="selectedFlag" value="default">
+                    </div>
+                </div>
+            </form> 
+            </div> 
+        </div>
+    </div>     
+</div>
+</div>
+</body>
+<script>
+
+const particleContainer = document.getElementById('particle-container');
+
+function createParticle() {
+const particle = document.createElement('img');
+
+// Array of particle image paths
+const particleImages = ['images/heartro.png', 'images/twitterro.png', 'images/likero.png'];
+
+// Randomly select a particle image
+const randomImage = particleImages[Math.floor(Math.random() * particleImages.length)];
+particle.src = randomImage;
+
+particle.style.position = 'absolute';
+particle.style.top = '-50px';
+particle.style.left = `${Math.random() * window.innerWidth}px`;
+particle.style.width = '30px';
+particleContainer.appendChild(particle);
+
+// Animate the particle
+let yPosition = -50;
+const interval = setInterval(() => {
+yPosition += 5;
+particle.style.top = `${yPosition}px`;
+
+if (yPosition > window.innerHeight) {
+clearInterval(interval);
+particleContainer.removeChild(particle);
+}
+}, 50);
+}
+
+function startParticleEffect() {
+setInterval(createParticle, 1000); // Adjust the 1000ms interval to your preference
+}
+
+
+// Function to update text based on selected flag
+
+
+function updateCountdown() {
+    const countdownElement = document.getElementById('countdown');
+    const talkCloud = document.querySelector('.talkCloud');
+    const triangle = document.querySelector('.triangle');
+
+    const targetDate = new Date('February 27, 2024 10:00:00').getTime();
+    const now = new Date().getTime();
+    const difference = targetDate - now;
+
+    if (difference > 0) {
+        let days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        days = days < 10 ? '0' + days : days;
+        hours = hours < 10 ? '0' + hours : hours;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+
+        countdownElement.textContent = `${days}:${hours}:${minutes}:${seconds}`;
+    } else {
+        countdownElement.textContent = 'RoderickGPT';
+        // Show the talkCloud and triangle when countdown ends
+        talkCloud.style.display = 'block'; // or 'flex' depending on your layout
+        triangle.style.display = 'block';
+    }
+}
+
+setInterval(updateCountdown, 1000);
+
+
+function updateText(selectedFlag) {
+const favoriteColleagueText = document.getElementById('favoriteColleague');
+const speakDunklischText = document.getElementById('speakDunklisch');
+const nietNodigText = document.getElementById('nietNodig');
+
+if (selectedFlag === 'vlag1') {
+nietNodigText.textContent = 'Advice from Roderick without an invoice';
+favoriteColleagueText.textContent = 'Where did I beleef my best years?';
+speakDunklischText.textContent = 'Yes, I will speak Dunglisch with you';
+} else if (selectedFlag === 'vlag2') {
+nietNodigText.textContent = 'Advies van Roderick zonder factuur';
+favoriteColleagueText.textContent = 'Wor heb ik mun beste jaore beleeft?';
+speakDunklischText.textContent = 'Jao, ik zal wel Tilburgs meej oe kletsen';
+}
+}
+document.addEventListener('DOMContentLoaded', () => {
+const flags = document.querySelectorAll('.flag-icon');
+const selectedFlag = 'vlag1'; // Default flag
+
+// Set default flag state
+const defaultFlagElement = document.getElementById(selectedFlag);
+if (defaultFlagElement) {
+defaultFlagElement.classList.add('selected');
+}
+
+// Update text based on default flag
+updateText(selectedFlag);
+
+// Flag click event listeners
+flags.forEach(flag => {
+flag.addEventListener('click', () => {
+flags.forEach(f => f.classList.remove('selected'));
+flag.classList.add('selected');
+updateText(flag.id);
+
+// Update the hidden input field with the selected flag's ID
+document.getElementById('selectedFlag').value = flag.id;
+});
+});
+
+    // Error handling for login input
+    const urlParams = new URLSearchParams(window.location.search);
+    const error = urlParams.get('error');
+    if (error) {
+        const input = document.getElementById('passcodeInput');
+        input.classList.add('shake', 'input-error');
+        setTimeout(() => input.classList.remove('shake'), 500);
+    }
+});
+
+
+
+window.onload = function() {
+    startParticleEffect();
+    const urlParams = new URLSearchParams(window.location.search);
+    const error = urlParams.get('error');
+    if (error) {
+        const input = document.getElementById('passcodeInput');
+        input.classList.add('shake', 'input-error');
+
+        setTimeout(function() {
+            input.classList.remove('shake');
+        }, 500);
+    }
+    setInterval(createParticle, 1000);
+
+}
+</script>
+</html>

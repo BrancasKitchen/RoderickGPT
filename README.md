@@ -1,10 +1,10 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+<!-- Improved compatibility of back to top link: See: https://github.com/floridomeacci/RoderickGPT -->
 <a name="readme-top"></a>
 <!--
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/floridomeacci/RoderickGPT">
     <img src="images/neutral.gif" alt="Logo" width="200" height="100%">
   </a>
 

@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/neutral.gif" alt="Logo" width="200" height="100%">
   </a>
 
   <h3 align="center">RoderickGPT</h3>
@@ -55,9 +55,9 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Florido Meacci - meacciflorido@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/floridomeacci/RoderickGPT](https://github.com/floridomeacci/RoderickGPT)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
